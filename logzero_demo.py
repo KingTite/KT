@@ -1,4 +1,5 @@
 import os
+import logging
 import logzero
 
 # 默认格式
@@ -12,7 +13,7 @@ DEFAULT_LOG_FILE_PATH = ''
 
 def get_customized_logger(filename,  # 日志名称
                           logfile_path='',  # 日志存储位置
-                          level=logzero.DEBUG,  # 日志最低等级（根据开发、线上调整）
+                          level=logging.DEBUG,  # 日志最低等级（根据开发、线上调整）
                           formatter=None,  # 日志格式
                           max_bytes=1024 * 1024 * 5,  # 日志文件最大存储量，默认 5M
                           backup_count=3,  # 要保留的备份数量
