@@ -16,17 +16,17 @@ def get_customized_logger(filename,  # 日志名称
                           formatter=None,  # 日志格式
                           max_bytes=1024 * 1024 * 5,  # 日志文件最大存储量，默认 5M
                           backup_count=3,  # 要保留的备份数量
-                          disableStderrLogger=False,
-                          isRootLogger=False,
+                          disable_stderr_logger=False,
+                          is_root_logger=False,
                           json=False,  # 日志输出启用json格式
                           json_ensure_ascii=False):
     """
     此函数生成自定义日志实例，可根据需求灵活调整参数配置
     """
     if logfile_path:
-        logfile_path = os.path.join(logfile_path, f'{filename}.log')
+        logfile_path = os.path.join(logfile_path, filename)
     else:
-        logfile_path = os.path.join(DEFAULT_LOG_FILE_PATH, f'{filename}.log')
+        logfile_path = os.path.join(DEFAULT_LOG_FILE_PATH, filename)
     if not formatter:
         formatter = DEFAULT_FORMAT
     return logzero.setup_logger(
@@ -36,17 +36,17 @@ def get_customized_logger(filename,  # 日志名称
         formatter=logzero.LogFormatter(fmt=formatter, datefmt=DEFAULT_DATE_FORMAT),
         maxBytes=max_bytes,
         backupCount=backup_count,
-        disableStderrLogger=disableStderrLogger,
-        isRootLogger=isRootLogger,
+        disableStderrLogger=disable_stderr_logger,
+        isRootLogger=is_root_logger,
         json=json,
         json_ensure_ascii=json_ensure_ascii
     )
 
 
 # 支付宝日志
-alipay_log = get_customized_logger('alipay', r'G:\PangQiu\日常开发')
+ALIPAY_LOG = get_customized_logger('alipay', r"G:\PangQiu\日常开发\demo\log")
 
-alipay_log.debug('debug')
-alipay_log.info('info')
-alipay_log.warning('warning')
-alipay_log.error('error')
+ALIPAY_LOG.debug('debug')
+ALIPAY_LOG.info('info')
+ALIPAY_LOG.warning('warning')
+ALIPAY_LOG.error('error')
