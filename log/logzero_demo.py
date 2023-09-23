@@ -25,9 +25,9 @@ def get_customized_logger(filename,  # 日志名称
     此函数生成自定义日志实例，可根据需求灵活调整参数配置
     """
     if logfile_path:
-        logfile_path = os.path.join(logfile_path, filename)
+        logfile_path = os.path.join(logfile_path, f'{filename}.log')
     else:
-        logfile_path = os.path.join(DEFAULT_LOG_FILE_PATH, filename)
+        logfile_path = os.path.join(DEFAULT_LOG_FILE_PATH, f'{filename}.log')
     if not formatter:
         formatter = DEFAULT_FORMAT
     return logzero.setup_logger(
@@ -44,11 +44,11 @@ def get_customized_logger(filename,  # 日志名称
     )
 
 
-
 # 支付宝日志
-ALIPAY_LOG = get_customized_logger('alipay', r"G:\PangQiu\日常开发\demo\log")
+ALIPAY_LOG = get_customized_logger('alipay', '/home/wd/Desktop/KT/log')
 
-ALIPAY_LOG.debug('debug')
-ALIPAY_LOG.info('info')
-ALIPAY_LOG.warning('warning')
-ALIPAY_LOG.error('error')
+# 数据库
+DB_LOG = get_customized_logger('database', '/home/wd/Desktop/KT/log')
+
+# Faker
+FAKER_LOG = get_customized_logger('faker', '/home/wd/Desktop/KT/log')
