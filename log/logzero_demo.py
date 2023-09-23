@@ -44,6 +44,7 @@ def get_customized_logger(filename,  # 日志名称
     )
 
 
+
 # 支付宝日志
 ALIPAY_LOG = get_customized_logger('alipay', r"G:\PangQiu\日常开发\demo\log")
 
