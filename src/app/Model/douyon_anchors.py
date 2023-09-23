@@ -1,7 +1,8 @@
-from peewee import (CharField, IntegerField, DateField,
-                    TextField, BigIntegerField, BooleanField)
+from peewee import (CharField, IntegerField, DateField, TextField, BigIntegerField, BooleanField)
 
-from . import _BaseRecordModel
+from src.app.Model import db, _BaseRecordModel
+
+
 class DouYinAnchors(_BaseRecordModel):
     """抖音主播表"""
     short_id = CharField()
