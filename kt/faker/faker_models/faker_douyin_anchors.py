@@ -1,10 +1,9 @@
 from datetime import datetime
-from pprint import pprint
 
 import factory
 
-from log.logzero_demo import FAKER_LOG
-from src.app.Model.douyon_anchors import DouYinAnchors
+from kt.log.logzero_demo import FAKER_LOG
+from kt.src.app1.models.douyon_anchors import DouYinAnchors
 
 
 class DouYinAnchorsFactory(factory.Factory):

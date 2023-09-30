@@ -45,10 +45,10 @@ def get_customized_logger(filename,  # 日志名称
 
 
 # 支付宝日志
-ALIPAY_LOG = get_customized_logger('alipay', '/home/wd/Desktop/KT/log')
+ALIPAY_LOG = get_customized_logger('alipay', '/kt/log')
 
 # 数据库
-DB_LOG = get_customized_logger('database', '/home/wd/Desktop/KT/log')
+DB_LOG = get_customized_logger('database', '/kt/log')
 
 # Faker
-FAKER_LOG = get_customized_logger('faker', '/home/wd/Desktop/KT/log')
+FAKER_LOG = get_customized_logger('faker', '/kt/log')

@@ -1,7 +1,4 @@
-from datetime import datetime
-from dateutil.tz import tzlocal
-
-from log.logzero_demo import DB_LOG
+from kt.log.logzero_demo import DB_LOG
 from peewee import PostgresqlDatabase
 from peewee import AutoField, DateTimeField, SQL
 from peewee import Model as PeeweeModel
@@ -12,7 +9,7 @@ DB_LOG.info('正在连接数据库')
 try:
     db.connect()
     DB_LOG.info('数据库连接成功')
-except Exception as e:
+except ConnectionError as e:
     DB_LOG.error(f'数据库连接失败:{e}')
     raise e
 

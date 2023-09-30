@@ -1,6 +1,6 @@
 from peewee import (CharField, IntegerField, DateField, TextField, BigIntegerField, BooleanField)
 
-from src.app.Model import db, _BaseRecordModel
+from kt.src.app1.models import _BaseRecordModel
 
 
 class DouYinAnchors(_BaseRecordModel):
